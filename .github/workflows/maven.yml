@@ -44,14 +44,14 @@ jobs:
         mvn clean package
         ls -lart target/*
         
-    - name: Build and Package
+    - name: Test
       run: |
         mvn test
         
     - name: publish artifact
       uses: actions/upload-artifact@v2
       with:
-        path: target/site/jacoco/index.html
+        path: target/site/jacoco/*.zip
         name: report
             
     - name: Cache SonarQube packages
