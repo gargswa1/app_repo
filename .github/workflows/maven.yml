@@ -42,6 +42,10 @@ jobs:
       run: |
         mvn clean package
         ls -lart target/*
+        
+    - name: Build and Package
+      run: |
+        mvn test
     
     - name: Cache SonarQube packages
       uses: actions/cache@v1
