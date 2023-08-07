@@ -47,7 +47,13 @@ jobs:
     - name: Build and Package
       run: |
         mvn test
-    
+        
+    - name: publish artifact
+      uses: actions/upload-artifact@v2
+      with:
+        path: target/site/jacoco/index.html
+        name: report
+            
     - name: Cache SonarQube packages
       uses: actions/cache@v1
       with:
